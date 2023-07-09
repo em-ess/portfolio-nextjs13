@@ -1,10 +1,9 @@
-export default function Projects() {
+export default function ContactPage() {
     return(
         <section>
             <div>
-                Project1
+                Contact me
             </div>
-            
         </section>
     );
 }

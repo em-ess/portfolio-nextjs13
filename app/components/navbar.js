@@ -1,8 +1,9 @@
 "use client";
 
+import clsx from "clsx";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-//framer
+import { LayoutGroup, motion } from "framer-motion";
 
 const navItems = {
     "/": {
@@ -10,6 +11,9 @@ const navItems = {
     },
     "/projects": {
         name:"projects",
+    },
+    "/blog": {
+        name:"blog"
     },
     "/contact": {
         name:"contact"
@@ -24,10 +28,17 @@ export default function Navbar() {
             <div>
                 <nav className="flex flex-row relative px-0 pb-0">
                     <div>
-                        {Object.entries(navItems.map) =>}
+                        {Object.entries(navItems).map(([path, {name}]) => {
+                            const isActive = path === pathname;
+                            return (
+                                <Link key={path} href={path}>
+                                    <span className="relative py-1 px-2">{name}</span>
+                                </Link>
+                                
+                            );})}
                     </div>
                 </nav>
             </div>
         </aside>
-    )
+    );
 }
