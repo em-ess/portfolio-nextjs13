@@ -1,10 +1,7 @@
 export default function Projects() {
-    return(
-        <section>
-            <div>
-                Project1
-            </div>
-            
-        </section>
-    );
+  return (
+    <section>
+      <div>Project1</div>
+    </section>
+  );
 }
